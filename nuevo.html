@@ -1,0 +1,1524 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para Ti, Mi Amor 💕</title>
+
+    ```
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #ff6b9d;
+        --secondary: #c44569;
+        --accent: #ffa07a;
+        --light: #ffe5ec;
+        --dark: #2d1b3d;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-pink: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      }
+
+      /* Particles Background */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 20px 50px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s;
+      }
+
+      .navbar.scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        padding: 100px 20px;
+      }
+
+      .hero-content h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: 5rem;
+        color: var(--dark);
+        margin-bottom: 20px;
+        opacity: 0;
+      }
+
+      .hero-content p {
+        font-size: 1.5rem;
+        color: var(--secondary);
+        margin-bottom: 30px;
+        opacity: 0;
+      }
+
+      .heart-icon {
+        font-size: 4rem;
+        color: var(--primary);
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.2);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+
+      /* Scroll Down Indicator */
+      .scroll-down {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+      }
+
+      .scroll-down i {
+        font-size: 2rem;
+        color: var(--primary);
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(20px);
+        }
+      }
+
+      /* Section Styles */
+      section {
+        min-height: 100vh;
+        padding: 100px 50px;
+        position: relative;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        text-align: center;
+        color: var(--dark);
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "♥";
+        display: block;
+        font-size: 2rem;
+        color: var(--primary);
+        margin-top: 10px;
+      }
+
+      /* ENVELOPE ANIMATION SECTION */
+      .envelope-container {
+        max-width: 900px;
+        margin: 0 auto;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .envelope {
+        width: 400px;
+        height: 300px;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .envelope:hover {
+        transform: scale(1.05);
+      }
+
+      .envelope-body {
+        width: 100%;
+        height: 200px;
+        background: white;
+        position: absolute;
+        bottom: 0;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        border: 3px solid var(--primary);
+      }
+
+      .envelope-flap {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        position: absolute;
+        top: 0;
+        transform-origin: top center;
+        clip-path: polygon(0 0, 50% 60%, 100% 0);
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        z-index: 10;
+      }
+
+      .envelope.open .envelope-flap {
+        transform: rotateX(180deg);
+      }
+
+      .envelope-seal {
+        width: 60px;
+        height: 60px;
+        background: var(--gradient-pink);
+        border-radius: 50%;
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.8s;
+      }
+
+      .envelope-seal i {
+        color: white;
+        font-size: 2rem;
+        animation: heartPulse 1.5s infinite;
+      }
+
+      @keyframes heartPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .envelope.open .envelope-seal {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+      }
+
+      .click-message {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--dark);
+        font-weight: 600;
+        animation: float 2s ease-in-out infinite;
+        white-space: nowrap;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+      }
+
+      .envelope.open + .click-message {
+        display: none;
+      }
+
+      /* Letter Styles */
+      .letter-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      .letter-container::before {
+        content: "✉️";
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3rem;
+      }
+
+      .letter-content {
+        font-size: 1.1rem;
+        line-height: 2;
+        color: var(--dark);
+        text-align: justify;
+      }
+
+      .signature {
+        font-family: "Dancing Script", cursive;
+        font-size: 2rem;
+        text-align: right;
+        margin-top: 40px;
+        color: var(--secondary);
+      }
+
+      /* Reasons Section - HORIZONTAL LAYOUT */
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .reason-card {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .reason-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
+      }
+
+      .reason-icon {
+        font-size: 3rem;
+        color: var(--primary);
+        min-width: 60px;
+        text-align: center;
+      }
+
+      .reason-text {
+        flex: 1;
+      }
+
+      .reason-text h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: var(--dark);
+      }
+
+      .reason-text p {
+        color: #666;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      /* CALENDAR SECTION */
+      .calendar-section {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .calendars-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .calendar-card {
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      .calendar-month {
+        font-family: "Dancing Script", cursive;
+        font-size: 2.5rem;
+        text-align: center;
+        color: var(--dark);
+        margin-bottom: 30px;
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+      }
+
+      .calendar-header {
+        font-weight: 700;
+        text-align: center;
+        padding: 10px;
+        color: var(--secondary);
+        font-size: 0.9rem;
+      }
+
+      .calendar-day {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        transition: all 0.3s;
+        position: relative;
+        color: var(--dark);
+      }
+
+      .calendar-day.empty {
+        opacity: 0;
+      }
+
+      .calendar-day.special {
+        background: var(--gradient-pink);
+        color: white;
+        font-weight: 700;
+        box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        transform: scale(1.1);
+      }
+
+      .calendar-day.special::after {
+        content: "❤️";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        font-size: 1.5rem;
+        animation: heartPulse 1.5s infinite;
+      }
+
+      .calendar-note {
+        text-align: center;
+        margin-top: 20px;
+        font-family: "Dancing Script", cursive;
+        font-size: 1.3rem;
+        color: var(--primary);
+      }
+
+      .calendar-hearts {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 2rem;
+        opacity: 0.3;
+      }
+
+      /* INFOGRAPHIC SECTION */
+      .infographic-section {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .infographic-container {
+        background: white;
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .infographic-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--gradient-pink);
+      }
+
+      .infographic-placeholder {
+        width: 100%;
+        min-height: 800px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .infographic-placeholder::before {
+        content: "🎨";
+        font-size: 5rem;
+        opacity: 0.3;
+      }
+
+      .infographic-placeholder p {
+        font-family: "Dancing Script", cursive;
+        font-size: 2rem;
+        color: var(--dark);
+      }
+
+      .infographic-img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        display: block;
+      }
+
+      /* MUSIC SECTION */
+      .music-section {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .music-card {
+        background: white;
+        border-radius: 25px;
+        padding: 50px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .music-card::before {
+        content: "♪ ♫ ♪";
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: var(--primary);
+        opacity: 0.2;
+      }
+
+      .music-description {
+        font-family: "Dancing Script", cursive;
+        font-size: 1.8rem;
+        color: var(--dark);
+        margin-bottom: 30px;
+        line-height: 1.8;
+      }
+
+      .spotify-placeholder {
+        width: 100%;
+        height: 380px;
+        background: linear-gradient(135deg, #1db954 0%, #191414 100%);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .spotify-placeholder::before {
+        content: "🎵";
+        font-size: 5rem;
+        opacity: 0.3;
+      }
+
+      .spotify-placeholder p {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .spotify-embed {
+        width: 100%;
+        height: 380px;
+        border-radius: 20px;
+        border: none;
+      }
+
+      /* Floating Hearts Animation */
+      .floating-heart {
+        position: fixed;
+        bottom: -50px;
+        animation: floatUp 4s ease-in;
+        pointer-events: none;
+        font-size: 2rem;
+        color: var(--primary);
+        z-index: 9999;
+      }
+
+      @keyframes floatUp {
+        to {
+          bottom: 110vh;
+          opacity: 0;
+          transform: translateX(100px);
+        }
+      }
+
+      /* Interactive Heart Button */
+      .heart-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 70px;
+        height: 70px;
+        background: var(--gradient-pink);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+        transition: all 0.3s;
+        z-index: 999;
+      }
+
+      .heart-button:hover {
+        transform: scale(1.1);
+      }
+
+      .heart-button i {
+        font-size: 2rem;
+        color: white;
+      }
+
+      /* Modal for special message */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        max-width: 600px;
+        text-align: center;
+        position: relative;
+        animation: modalPop 0.5s;
+      }
+
+      @keyframes modalPop {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--dark);
+      }
+
+      .modal-content h2 {
+        font-family: "Dancing Script", cursive;
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      /* Music Player */
+      .music-player {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        background: white;
+        padding: 15px 25px;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        z-index: 999;
+      }
+
+      .music-toggle {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient-pink);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: white;
+      }
+
+      /* Responsive Design for iPhone 11+ and Laptops */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 3.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.2rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .navbar {
+          padding: 15px 20px;
+        }
+
+        .nav-links {
+          gap: 15px;
+          font-size: 0.85rem;
+        }
+
+        section {
+          padding: 80px 20px;
+        }
+
+        /* Envelope responsive */
+        .envelope {
+          width: 320px;
+          height: 240px;
+        }
+
+        .envelope-body {
+          height: 160px;
+        }
+
+        .envelope-flap {
+          height: 160px;
+        }
+
+        .envelope-seal {
+          width: 50px;
+          height: 50px;
+          top: 96px;
+        }
+
+        .envelope-seal i {
+          font-size: 1.5rem;
+        }
+
+        .letter-container {
+          padding: 40px 30px;
+        }
+
+        .letter-content {
+          font-size: 1rem;
+          line-height: 1.8;
+        }
+
+        /* Reasons cards responsive */
+        .reasons-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .reason-card {
+          flex-direction: column;
+          text-align: center;
+          padding: 30px;
+        }
+
+        .reason-icon {
+          font-size: 2.5rem;
+        }
+
+        .reason-text h3 {
+          font-size: 1.3rem;
+        }
+
+        /* Calendar responsive */
+        .calendars-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .calendar-card {
+          padding: 30px;
+        }
+
+        .calendar-month {
+          font-size: 2rem;
+        }
+
+        .calendar-day {
+          font-size: 0.95rem;
+        }
+
+        /* Infographic responsive */
+        .infographic-container {
+          padding: 20px;
+        }
+
+        .infographic-placeholder {
+          min-height: 600px;
+        }
+
+        /* Music section responsive */
+        .music-card {
+          padding: 30px;
+        }
+
+        .music-description {
+          font-size: 1.5rem;
+        }
+
+        .spotify-placeholder {
+          height: 320px;
+        }
+
+        /* Fixed elements responsive */
+        .heart-button {
+          width: 60px;
+          height: 60px;
+          bottom: 20px;
+          right: 20px;
+        }
+
+        .heart-button i {
+          font-size: 1.5rem;
+        }
+
+        .music-player {
+          bottom: 90px;
+          left: 20px;
+          padding: 12px 20px;
+        }
+
+        .modal-content {
+          margin: 20px;
+          padding: 40px 30px;
+        }
+      }
+
+      /* Larger screens optimization */
+      @media (min-width: 1400px) {
+        .hero-content h1 {
+          font-size: 6rem;
+        }
+
+        .section-title {
+          font-size: 3.5rem;
+        }
+
+        .envelope {
+          width: 500px;
+          height: 375px;
+        }
+
+        .envelope-body {
+          height: 250px;
+        }
+
+        .envelope-flap {
+          height: 250px;
+        }
+      }
+    </style>
+    ```
+  </head>
+  <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    ```
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+        <i
+          class="fas fa-heart"
+          style="color: var(--primary); font-size: 2rem"
+        ></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#carta">Carta</a></li>
+        <li><a href="#razones">Razones</a></li>
+        <li><a href="#calendario">Calendario</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#musica">Música</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <i class="fas fa-heart heart-icon"></i>
+        <h1 class="hero-title">Para Ti, Mi Amor</h1>
+        <p class="hero-subtitle">
+          Un espacio especial creado con todo mi corazón
+        </p>
+      </div>
+      <div class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Love Letter Section with Envelope -->
+    <section id="carta">
+      <h2 class="section-title" data-aos="fade-up">Mi Carta Para Ti</h2>
+
+      <div class="envelope-container" data-aos="zoom-in">
+        <div class="envelope" id="envelope" onclick="openLetter()">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body"></div>
+          <div class="envelope-seal">
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="click-message">
+          <i class="fas fa-hand-pointer"></i> Haz clic para abrir
+        </div>
+      </div>
+
+      <div
+        class="letter-container"
+        id="letter"
+        style="display: none; opacity: 0"
+      >
+        <div class="letter-content">
+          <p>Mi amor,</p>
+          <br />
+          <p>
+            Desde el momento en que llegaste a mi vida, todo cambió. Me haces
+            sentir acompañado, me das la motivacion para intentarlo todo y 
+            ser mejor. Eres la razon suficiente para hacer mi día el mejor de
+            todos los anteriores.
+          </p>
+          <br />
+          <p>
+            Cada sonrisa tuya ilumina mi mundo, cada abrazo me hace sentir en
+            casa, y cada momento a tu lado es un regalo que adoro. Eres la razón
+            por la que sonrío, por la que creo en el amor verdadero y por la que
+            quiero ser mejor cada día.
+          </p>
+          <br/>
+          <p>
+            Gracias por ser tú, por amarme con todas mis imperfecciones, por
+            estar en los momentos buenos y en los difíciles, y por hacer de mi
+            vida algo extraordinario. Te amo más de lo que las palabras pueden
+            expresar, y espero pasar el resto de mis días demostrándotelo.
+          </p>
+          <br/>
+          <p>
+            Eres mi persona favorita, mi mejor amiga, mi amor verdadero. Gracias
+            por existir y por elegirme cada día.
+          </p>
+          <br/>
+          <p>
+            Feliz 14 de Febrero a la niña que yo mas amo, mi kikita emosha peshosha
+            te amo como no tienes una idea, eres la niña de mi vida muchas gracias 
+            por hacer mi vida mucho mas bonita ♡ 
+          </p>
+        </div>
+        <div class="signature">Con todo mi amor, siempre tuyo ♡</div>
+      </div>
+    </section>
+
+    <!-- Reasons Why I Love You - HORIZONTAL -->
+    <section id="razones">
+      <h2 class="section-title" data-aos="fade-up">
+        Razones Por Las Que Te Amo
+      </h2>
+      <div class="reasons-grid">
+        <div class="reason-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="reason-icon">
+            <i class="fas fa-smile-beam"></i>
+          </div>
+          <div class="reason-text">
+            <h3>Tu Sonrisa</h3>
+            <p>
+              Esa sonrisita que me encanta y me tiene loco de amor.
+              Me encanta demasiado verte feliz, siempre intentare 
+              sacarte una sonrisita.
+            </p>
+          </div>
+        </div>
+
+        <div class="reason-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="reason-icon">
+            <i class="fas fa-heart-pulse"></i>
+          </div>
+          <div class="reason-text">
+            <h3>Tu Forma de Ser</h3>
+            <p>
+              Porque tienes una personalidad tan hermosa, que siempre tengas
+              algo para platicar, que seas tan amable, tan feliz y muy responsable
+              es algo que me encanta tanto de ti.
+            </p>
+          </div>
+        </div>
+
+        <div class="reason-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="reason-icon">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <div class="reason-text">
+            <h3>Tu Amor</h3>
+            <p>
+              La forma en que me amas, me cuidas y estás presente en cada
+              momento. Me haces sentir especial cada día.
+            </p>
+          </div>
+        </div>
+
+        <div class="reason-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="reason-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="reason-text">
+            <h3>Nuestras Conversaciones</h3>
+            <p>
+              Podemos estar platicando todo el dia sin parar y eso me fascina,
+              siempre tener algo de que platicar contigo y sean tan reconfortantes
+              las platicas.
+            </p>
+          </div>
+        </div>
+
+        <div class="reason-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="reason-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="reason-text">
+            <h3>Cómo Me Inspiras</h3>
+            <p>
+              Me haces querer ser mejor persona cada día. Tu apoyo y confianza
+              las agradezco como no te das una idea, que estes para mi cuando
+              te necesito y me apoyes es algo por lo que tienes toda mi vida
+              ganada.
+            </p>
+          </div>
+        </div>
+
+        <div class="reason-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="reason-icon">
+            <i class="fas fa-infinity"></i>
+          </div>
+          <div class="reason-text">
+            <h3>Todo Tú</h3>
+            <p>
+              Simplemente por ser tú. No cambiaría nada de ti. Eres perfecta tal
+              como eres. Y te MEGA AMO MI NIÑA HERMOSA.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar Section - Our Journey -->
+    <section id="calendario" style="background: white">
+      <h2 class="section-title" data-aos="fade-up">Nuestro Tiempo Juntos</h2>
+      <div class="calendar-section">
+        <div class="calendars-container">
+          <!-- December 2024 -->
+          <div class="calendar-card" data-aos="flip-left">
+            <div class="calendar-hearts">💕</div>
+            <div class="calendar-month">Diciembre 2025</div>
+            <div class="calendar-grid">
+              <div class="calendar-header">D</div>
+              <div class="calendar-header">L</div>
+              <div class="calendar-header">M</div>
+              <div class="calendar-header">M</div>
+              <div class="calendar-header">J</div>
+              <div class="calendar-header">V</div>
+              <div class="calendar-header">S</div>
+
+              <!-- Week 1 -->
+              <div class="calendar-day">1</div>
+              <div class="calendar-day">2</div>
+              <div class="calendar-day">3</div>
+              <div class="calendar-day">4</div>
+              <div class="calendar-day">5</div>
+              <div class="calendar-day">6</div>
+              <div class="calendar-day">7</div>
+
+              <!-- Week 2 -->
+              <div class="calendar-day">8</div>
+              <div class="calendar-day special">9</div>
+              <div class="calendar-day">10</div>
+              <div class="calendar-day">11</div>
+              <div class="calendar-day">12</div>
+              <div class="calendar-day">13</div>
+              <div class="calendar-day">14</div>
+
+              <!-- Week 3 -->
+              <div class="calendar-day">15</div>
+              <div class="calendar-day">16</div>
+              <div class="calendar-day">17</div>
+              <div class="calendar-day">18</div>
+              <div class="calendar-day">19</div>
+              <div class="calendar-day">20</div>
+              <div class="calendar-day">21</div>
+
+              <!-- Week 4 -->
+              <div class="calendar-day">22</div>
+              <div class="calendar-day">23</div>
+              <div class="calendar-day">24</div>
+              <div class="calendar-day">25</div>
+              <div class="calendar-day">26</div>
+              <div class="calendar-day">27</div>
+              <div class="calendar-day">28</div>
+
+              <!-- Week 5 -->
+              <div class="calendar-day">29</div>
+              <div class="calendar-day">30</div>
+              <div class="calendar-day">31</div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+            </div>
+            <div class="calendar-note">El día que comenzamos 💕</div>
+          </div>
+
+          <!-- February 2025 -->
+          <div class="calendar-card" data-aos="flip-right">
+            <div class="calendar-hearts">💕</div>
+            <div class="calendar-month">Febrero 2026</div>
+            <div class="calendar-grid">
+              <div class="calendar-header">D</div>
+              <div class="calendar-header">L</div>
+              <div class="calendar-header">M</div>
+              <div class="calendar-header">M</div>
+              <div class="calendar-header">J</div>
+              <div class="calendar-header">V</div>
+              <div class="calendar-header">S</div>
+
+              <!-- Week 1 -->
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day empty"></div>
+              <div class="calendar-day">1</div>
+
+              <!-- Week 2 -->
+              <div class="calendar-day">2</div>
+              <div class="calendar-day">3</div>
+              <div class="calendar-day">4</div>
+              <div class="calendar-day">5</div>
+              <div class="calendar-day">6</div>
+              <div class="calendar-day">7</div>
+              <div class="calendar-day">8</div>
+
+              <!-- Week 3 -->
+              <div class="calendar-day">9</div>
+              <div class="calendar-day">10</div>
+              <div class="calendar-day">11</div>
+              <div class="calendar-day">12</div>
+              <div class="calendar-day">13</div>
+              <div class="calendar-day special">14</div>
+              <div class="calendar-day">15</div>
+
+              <!-- Week 4 -->
+              <div class="calendar-day">16</div>
+              <div class="calendar-day">17</div>
+              <div class="calendar-day">18</div>
+              <div class="calendar-day">19</div>
+              <div class="calendar-day">20</div>
+              <div class="calendar-day">21</div>
+              <div class="calendar-day">22</div>
+
+              <!-- Week 5 -->
+              <div class="calendar-day">23</div>
+              <div class="calendar-day">24</div>
+              <div class="calendar-day">25</div>
+              <div class="calendar-day">26</div>
+              <div class="calendar-day">27</div>
+              <div class="calendar-day">28</div>
+              <div class="calendar-day empty"></div>
+            </div>
+            <div class="calendar-note">San Valentín, contigo ❤️</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px" data-aos="fade-up">
+          <p
+            style="
+              font-family: &quot;Dancing Script&quot;, cursive;
+              font-size: 2rem;
+              color: var(--dark);
+              line-height: 2;
+            "
+          >
+            Desde el 9 de Diciembre de 2025 hasta hoy... <br />
+            Y por muchos días más juntos 💕
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infographic/Story Section -->
+    <section id="nosotros">
+      <h2 class="section-title" data-aos="fade-up">Nuestra Historia</h2>
+      <div class="infographic-section">
+        <div class="infographic-container" data-aos="zoom-in">
+          <img
+            src="QSMN0.jpeg"
+            alt="Nuestra Historia"
+            class="infographic-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="musica" style="background: white">
+      <h2 class="section-title" data-aos="fade-up">Nuestra Canción</h2>
+      <div class="music-section">
+        <div class="music-card" data-aos="zoom-in">
+          <div class="music-description">
+            La canción que te dediqué cuando te pedí que fueras mi novia... Cada
+            vez que la escucho, pienso en ti y en ese momento perfecto 💕
+          </div>
+          <iframe
+            class="spotify-embed"
+            data-testid="embed-iframe"
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/track/5lOEI6CBTnLQrVVoIswN8Q?si=8mZhEb-xRTOGXvRCS7OrUg"
+            width="100%"
+            height="152"
+            frameborder="0"
+            allowfullscreen=""
+            allow="
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              fullscreen;
+              picture-in-picture;
+            "
+            loading="lazy"
+          ></iframe>
+         
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="specialModal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h2>¡Te Amo! 💕</h2>
+        <p style="font-size: 1.2rem; line-height: 2">
+          Gracias por existir y hacer mi vida tan especial. Cada día a tu lado
+          es un regalo. Eres lo mejor que me ha pasado y no puedo imaginar mi
+          vida sin ti.
+        </p>
+        <i
+          class="fas fa-heart"
+          style="font-size: 4rem; color: var(--primary); margin-top: 20px"
+        ></i>
+      </div>
+    </div>
+
+    <!-- Floating Heart Button -->
+    <div class="heart-button" onclick="openModal()">
+      <i class="fas fa-heart"></i>
+    </div>
+
+    
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Particles.js Configuration
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ff6b9d" },
+          shape: { type: "heart" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "top",
+            random: true,
+            straight: false,
+            out_mode: "out",
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+          },
+        },
+      });
+
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(".hero-title", {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.5,
+      });
+
+      gsap.to(".hero-subtitle", {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.8,
+      });
+
+      // Navbar Scroll Effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Envelope Opening Animation
+      let letterOpened = false;
+      function openLetter() {
+        if (letterOpened) return;
+        letterOpened = true;
+
+        const envelope = document.getElementById("envelope");
+        const letter = document.getElementById("letter");
+
+        envelope.classList.add("open");
+
+        // Create floating hearts
+        for (let i = 0; i < 10; i++) {
+          setTimeout(() => createFloatingHeart(), i * 100);
+        }
+
+        setTimeout(() => {
+          gsap.to(envelope, {
+            opacity: 0,
+            scale: 0.5,
+            duration: 1,
+            ease: "power2.in",
+            onComplete: () => {
+              envelope.style.display = "none";
+            },
+          });
+
+          letter.style.display = "block";
+          gsap.to(letter, {
+            opacity: 1,
+            scale: 1,
+            duration: 1.5,
+            ease: "power2.out",
+          });
+        }, 800);
+      }
+
+      // Floating Hearts Creation
+      function createFloatingHeart() {
+        const heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "%";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 4000);
+      }
+
+      // Create hearts periodically
+      setInterval(createFloatingHeart, 3000);
+
+      // Modal Functions
+      function openModal() {
+        document.getElementById("specialModal").style.display = "flex";
+        for (let i = 0; i < 5; i++) {
+          setTimeout(createFloatingHeart, i * 150);
+        }
+      }
+
+      function closeModal() {
+        document.getElementById("specialModal").style.display = "none";
+      }
+
+      // Music Toggle
+      let musicPlaying = false;
+      function toggleMusic() {
+        musicPlaying = !musicPlaying;
+        const icon = document.querySelector(".music-toggle i");
+        if (musicPlaying) {
+          icon.classList.remove("fa-music");
+          icon.classList.add("fa-pause");
+        } else {
+          icon.classList.remove("fa-pause");
+          icon.classList.add("fa-music");
+        }
+      }
+
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Reason Cards Interaction
+      document.querySelectorAll(".reason-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          createFloatingHeart();
+          gsap.to(this.querySelector(".reason-icon i"), {
+            rotation: 360,
+            scale: 1.3,
+            duration: 0.6,
+            ease: "back.out",
+            onComplete: () => {
+              gsap.to(this.querySelector(".reason-icon i"), {
+                rotation: 0,
+                scale: 1,
+                duration: 0.3,
+              });
+            },
+          });
+        });
+      });
+
+      // Calendar special days interaction
+      document.querySelectorAll(".calendar-day.special").forEach((day) => {
+        day.addEventListener("click", function () {
+          for (let i = 0; i < 5; i++) {
+            setTimeout(createFloatingHeart, i * 100);
+          }
+          gsap.to(this, {
+            scale: [1, 1.3, 1],
+            duration: 0.5,
+            ease: "power2.inOut",
+          });
+        });
+      });
+
+      // Easter Egg: Click on logo
+      let clickCount = 0;
+      document.querySelector(".logo i").addEventListener("click", () => {
+        clickCount++;
+        if (clickCount === 3) {
+          alert("¡Te amo infinitamente! 💕✨💖");
+          for (let i = 0; i < 15; i++) {
+            setTimeout(createFloatingHeart, i * 150);
+          }
+          clickCount = 0;
+        }
+      });
+    </script>
+    ```
+  </body>
+</html>
