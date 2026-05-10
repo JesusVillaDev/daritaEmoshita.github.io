@@ -973,9 +973,9 @@
           <br />
           <p>
             Desde el momento en que llegaste a mi vida, todo cambió. Me haces
-            sentir acompañado, me das la motivacion para intentarlo todo y 
-            ser mejor. Eres la razon suficiente para hacer mi día el mejor de
-            todos los anteriores.
+            sentir acompañado, me das la motivacion para intentarlo todo y ser
+            mejor. Eres la razon suficiente para hacer mi día el mejor de todos
+            los anteriores.
           </p>
           <br />
           <p>
@@ -984,23 +984,23 @@
             por la que sonrío, por la que creo en el amor verdadero y por la que
             quiero ser mejor cada día.
           </p>
-          <br/>
+          <br />
           <p>
             Gracias por ser tú, por amarme con todas mis imperfecciones, por
             estar en los momentos buenos y en los difíciles, y por hacer de mi
             vida algo extraordinario. Te amo más de lo que las palabras pueden
             expresar, y espero pasar el resto de mis días demostrándotelo.
           </p>
-          <br/>
+          <br />
           <p>
             Eres mi persona favorita, mi mejor amiga, mi amor verdadero. Gracias
             por existir y por elegirme cada día.
           </p>
-          <br/>
+          <br />
           <p>
-            Feliz 14 de Febrero a la niña que yo mas amo, mi kikita emosha peshosha
-            te amo como no tienes una idea, eres la niña de mi vida muchas gracias 
-            por hacer mi vida mucho mas bonita ♡ 
+            Feliz 14 de Febrero a la niña que yo mas amo, mi kikita emosha
+            peshosha te amo como no tienes una idea, eres la niña de mi vida
+            muchas gracias por hacer mi vida mucho mas bonita ♡
           </p>
         </div>
         <div class="signature">Con todo mi amor, siempre tuyo ♡</div>
@@ -1020,9 +1020,8 @@
           <div class="reason-text">
             <h3>Tu Sonrisa</h3>
             <p>
-              Esa sonrisita que me encanta y me tiene loco de amor.
-              Me encanta demasiado verte feliz, siempre intentare 
-              sacarte una sonrisita.
+              Esa sonrisita que me encanta y me tiene loco de amor. Me encanta
+              demasiado verte feliz, siempre intentare sacarte una sonrisita.
             </p>
           </div>
         </div>
@@ -1035,8 +1034,8 @@
             <h3>Tu Forma de Ser</h3>
             <p>
               Porque tienes una personalidad tan hermosa, que siempre tengas
-              algo para platicar, que seas tan amable, tan feliz y muy responsable
-              es algo que me encanta tanto de ti.
+              algo para platicar, que seas tan amable, tan feliz y muy
+              responsable es algo que me encanta tanto de ti.
             </p>
           </div>
         </div>
@@ -1062,8 +1061,8 @@
             <h3>Nuestras Conversaciones</h3>
             <p>
               Podemos estar platicando todo el dia sin parar y eso me fascina,
-              siempre tener algo de que platicar contigo y sean tan reconfortantes
-              las platicas.
+              siempre tener algo de que platicar contigo y sean tan
+              reconfortantes las platicas.
             </p>
           </div>
         </div>
@@ -1076,8 +1075,8 @@
             <h3>Cómo Me Inspiras</h3>
             <p>
               Me haces querer ser mejor persona cada día. Tu apoyo y confianza
-              las agradezco como no te das una idea, que estes para mi cuando
-              te necesito y me apoyes es algo por lo que tienes toda mi vida
+              las agradezco como no te das una idea, que estes para mi cuando te
+              necesito y me apoyes es algo por lo que tienes toda mi vida
               ganada.
             </p>
           </div>
@@ -1283,7 +1282,6 @@
             "
             loading="lazy"
           ></iframe>
-         
         </div>
       </div>
     </section>
@@ -1309,8 +1307,6 @@
     <div class="heart-button" onclick="openModal()">
       <i class="fas fa-heart"></i>
     </div>
-
-    
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -1522,77 +1518,115 @@
 
     <!-- ♡ Navegación por Scroll — Solo Móvil/Tablet ♡ -->
     <script>
-    (function () {
-        var isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || ('ontouchstart' in window && window.innerWidth <= 1024);
+      (function () {
+        var isMobile =
+          /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+          ("ontouchstart" in window && window.innerWidth <= 1024);
         if (!isMobile) return;
 
-        var PAGE_NEXT = 'https://jesusgutzVil.github.io/pocoyosita.github.io/';
-        var PAGE_PREV = 'https://jesusgutzVil.github.io/pocoyosita.github.io/';
+        var PAGE_NEXT = "https://jesusgutzvil.github.io/pocoyosita.github.io/";
+        var PAGE_PREV = "https://jesusgutzvil.github.io/amolshitaEmosha.github.io/";
         var touchStartY = 0;
         var navigating = false;
         var MIN_SWIPE = 58;
 
-        function atBottom() { return window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 12; }
-        function atTop()    { return window.scrollY <= 2; }
+        function atBottom() {
+          return (
+            window.scrollY + window.innerHeight >=
+            document.documentElement.scrollHeight - 12
+          );
+        }
+        function atTop() {
+          return window.scrollY <= 2;
+        }
 
         function goToPage(url) {
-            if (navigating) return;
-            navigating = true;
-            var ov = document.createElement('div');
-            ov.style.cssText = [
-                'position:fixed;inset:0;z-index:999999;',
-                'background:linear-gradient(135deg,#ffecd2,#f5576c);',
-                'display:flex;align-items:center;justify-content:center;',
-                'flex-direction:column;gap:12px;',
-                'opacity:0;transition:opacity 0.5s ease;pointer-events:none;'
-            ].join('');
-            ov.innerHTML = '<span style="font-size:3.5rem;animation:hb .6s ease-in-out infinite;">💕</span>' +
-                           '<span style="font-family:\'Dancing Script\',cursive;font-size:1.6rem;color:#2d1b3d;">cambiando de página…</span>';
-            var style = document.createElement('style');
-            style.textContent = '@keyframes hb{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}';
-            document.head.appendChild(style);
-            document.body.appendChild(ov);
-            requestAnimationFrame(function () { ov.style.opacity = '1'; });
-            setTimeout(function () { window.location.href = url; }, 650);
+          if (navigating) return;
+          navigating = true;
+          var ov = document.createElement("div");
+          ov.style.cssText = [
+            "position:fixed;inset:0;z-index:999999;",
+            "background:linear-gradient(135deg,#ffecd2,#f5576c);",
+            "display:flex;align-items:center;justify-content:center;",
+            "flex-direction:column;gap:12px;",
+            "opacity:0;transition:opacity 0.5s ease;pointer-events:none;",
+          ].join("");
+          ov.innerHTML =
+            '<span style="font-size:3.5rem;animation:hb .6s ease-in-out infinite;">💕</span>' +
+            "<span style=\"font-family:'Dancing Script',cursive;font-size:1.6rem;color:#2d1b3d;\">cambiando de página…</span>";
+          var style = document.createElement("style");
+          style.textContent =
+            "@keyframes hb{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}";
+          document.head.appendChild(style);
+          document.body.appendChild(ov);
+          requestAnimationFrame(function () {
+            ov.style.opacity = "1";
+          });
+          setTimeout(function () {
+            window.location.href = url;
+          }, 650);
         }
 
         function createEdgeHint(position) {
-            var hint = document.createElement('div');
-            var isBottom = position === 'bottom';
-            hint.style.cssText = [
-                'position:fixed;' + position + ':0;left:0;right:0;z-index:9998;',
-                'padding:10px;text-align:center;pointer-events:none;',
-                'background:linear-gradient(' + (isBottom ? '0' : '180') + 'deg,rgba(255,235,220,0.95),transparent);',
-                'opacity:0;transition:opacity 0.3s;',
-                'font-family:\'Poppins\',sans-serif;font-size:11px;',
-                'letter-spacing:2px;text-transform:uppercase;color:#c44569;'
-            ].join('');
-            hint.textContent = isBottom ? '↓ siguiente página' : '↑ anterior página';
-            document.body.appendChild(hint);
-            return hint;
+          var hint = document.createElement("div");
+          var isBottom = position === "bottom";
+          hint.style.cssText = [
+            "position:fixed;" + position + ":0;left:0;right:0;z-index:9998;",
+            "padding:10px;text-align:center;pointer-events:none;",
+            "background:linear-gradient(" +
+              (isBottom ? "0" : "180") +
+              "deg,rgba(255,235,220,0.95),transparent);",
+            "opacity:0;transition:opacity 0.3s;",
+            "font-family:'Poppins',sans-serif;font-size:11px;",
+            "letter-spacing:2px;text-transform:uppercase;color:#c44569;",
+          ].join("");
+          hint.textContent = isBottom
+            ? "↓ siguiente página"
+            : "↑ anterior página";
+          document.body.appendChild(hint);
+          return hint;
         }
-        var bottomHint = createEdgeHint('bottom');
-        var topHint    = createEdgeHint('top');
+        var bottomHint = createEdgeHint("bottom");
+        var topHint = createEdgeHint("top");
 
-        document.addEventListener('touchstart', function (e) {
+        document.addEventListener(
+          "touchstart",
+          function (e) {
             touchStartY = e.touches[0].clientY;
-        }, { passive: true });
+          },
+          { passive: true },
+        );
 
-        document.addEventListener('touchmove', function (e) {
+        document.addEventListener(
+          "touchmove",
+          function (e) {
             var dy = touchStartY - e.touches[0].clientY;
-            if (dy > 20 && atBottom())   { bottomHint.style.opacity = '1'; topHint.style.opacity = '0'; }
-            else if (dy < -20 && atTop()){ topHint.style.opacity = '1'; bottomHint.style.opacity = '0'; }
-            else { bottomHint.style.opacity = '0'; topHint.style.opacity = '0'; }
-        }, { passive: true });
+            if (dy > 20 && atBottom()) {
+              bottomHint.style.opacity = "1";
+              topHint.style.opacity = "0";
+            } else if (dy < -20 && atTop()) {
+              topHint.style.opacity = "1";
+              bottomHint.style.opacity = "0";
+            } else {
+              bottomHint.style.opacity = "0";
+              topHint.style.opacity = "0";
+            }
+          },
+          { passive: true },
+        );
 
-        document.addEventListener('touchend', function (e) {
-            bottomHint.style.opacity = '0';
-            topHint.style.opacity = '0';
+        document.addEventListener(
+          "touchend",
+          function (e) {
+            bottomHint.style.opacity = "0";
+            topHint.style.opacity = "0";
             var dy = touchStartY - e.changedTouches[0].clientY;
-            if      (dy >  MIN_SWIPE && atBottom()) goToPage(PAGE_NEXT);
-            else if (dy < -MIN_SWIPE && atTop())    goToPage(PAGE_PREV);
-        }, { passive: true });
-    })();
+            if (dy > MIN_SWIPE && atBottom()) goToPage(PAGE_NEXT);
+            else if (dy < -MIN_SWIPE && atTop()) goToPage(PAGE_PREV);
+          },
+          { passive: true },
+        );
+      })();
     </script>
     ```
   </body>
